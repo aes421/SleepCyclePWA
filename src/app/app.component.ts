@@ -14,8 +14,8 @@ export class AppComponent implements OnInit {
   periods = ['AM', 'PM'];
 
   form = new FormGroup({
-    hour: new FormControl(this.hours[0]),
-    minute: new FormControl(this.minutes[0]),
+    hour: new FormControl('hour'),
+    minute: new FormControl('minute'),
     period: new FormControl(this.periods[0])
   });
 

@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    background: #1C3F5A;
+    color: #FFFFFF;
+    font-family: 'Muli', sans-serif;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.defaultSelection{
+    display:none;
+}
+
+button{
+    background: #1BD0CB;
+}

@@ -1,17 +1,22 @@
-<p> I want to wake up at:</p>
-<form [formGroup]="form">
-  <select id="hours" formControlName="hour">
-    <option *ngFor="let h of hours" [value]="h">{{h}}</option>
-  </select>
-  <select id="minutes" formControlName="minute">
-    <option *ngFor="let m of minutes" [value]="m">{{m}}</option>
-  </select>
-  <select id="period" formControlName="period">
-    <option *ngFor="let p of periods" [value]="p">{{p}}</option>
-  </select>
-  <button (click)="calculate()">CALCULATE</button>
-</form>
-<p *ngIf="suggestedTimes.length > 0">
-  I should go to sleep at:
-  <ng-container *ngFor="let time of suggestedTimes">{{ time.format('hh:mm a') }}</ng-container>
-</p>
+<main>
+  <h1> I want to wake up at:</h1>
+  <form [formGroup]="form">
+    <select id="hours" formControlName="hour">
+      <option class="defaultSelection">hour</option>
+      <option *ngFor="let h of hours" [value]="h">{{h}}</option>
+    </select>
+    <select id="minutes" formControlName="minute">
+      <option class="defaultSelection">minute</option>
+      <option *ngFor="let m of minutes" [value]="m">{{m}}</option>
+    </select>
+    <select id="period" formControlName="period">
+      <option *ngFor="let p of periods" [value]="p">{{p}}</option>
+    </select>
+    <button (click)="calculate()">CALCULATE</button>
+  </form>
+
+  <p *ngIf="suggestedTimes.length > 0">
+    I should go to sleep at:
+    <ng-container *ngFor="let time of suggestedTimes">{{ time.format('hh:mm a') }}</ng-container>
+  </p>
+</main>
