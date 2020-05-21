@@ -15,8 +15,12 @@
     <button (click)="calculate()">CALCULATE</button>
   </form>
 
-  <p *ngIf="suggestedTimes.length > 0">
-    I should go to sleep at:
-    <ng-container *ngFor="let time of suggestedTimes">{{ time.format('hh:mm a') }}</ng-container>
-  </p>
+  <section id="suggestions-grid" *ngIf="suggestedTimes.length > 0">
+    <h1> I should go to sleep at: </h1>
+    <ng-container *ngFor="let time of suggestedTimes">
+      <div class="suggestion">
+        {{ time.format('hh:mm a') }}
+      </div>
+    </ng-container>
+  </section>
 </main>
