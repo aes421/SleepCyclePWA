@@ -3,6 +3,11 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+}
+
+form{
+    margin-bottom: 30px;
 }
 
 select {
@@ -41,14 +46,11 @@ button:active{
     transition: all 0.2s ease-in;   
 }
 
-#suggestions-grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    h1 {
-        grid-column-start: span 2;
-        justify-self: center;
-    }
+#suggestions{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .suggestion{ 
