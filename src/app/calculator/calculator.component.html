@@ -1,0 +1,26 @@
+<main>
+    <h1> I want to wake up at:</h1>
+    <form [formGroup]="form">
+        <select id="hours" formControlName="hour">
+            <option class="defaultSelection">hour</option>
+            <option *ngFor="let h of hours" [value]="h">{{h}}</option>
+        </select>
+        <select id="minutes" formControlName="minute">
+            <option class="defaultSelection">minute</option>
+            <option *ngFor="let m of minutes" [value]="m">{{m}}</option>
+        </select>
+        <select id="period" formControlName="period">
+            <option *ngFor="let p of periods" [value]="p">{{p}}</option>
+        </select>
+        <button (click)="calculate()">CALCULATE</button>
+    </form>
+
+    <section id="suggestions-grid" *ngIf="suggestedTimes.length > 0">
+        <h1> I should go to sleep at: </h1>
+        <ng-container *ngFor="let time of suggestedTimes">
+            <div class="suggestion">
+                {{ time.format('hh:mm a') }}
+            </div>
+        </ng-container>
+    </section>
+</main>
