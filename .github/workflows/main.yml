@@ -25,5 +25,8 @@ jobs:
     - name: Install Dependencies
       run: npm install
       
+    - name: lint project
+      run: npm run lint
+     
     - name: Build angular project
-      run: npm run build
+      run: npm run prod-build
