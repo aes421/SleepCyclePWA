@@ -14,7 +14,7 @@ export class SleepCycleCalculatorService {
       const bedtime = targetTime.clone().subtract(90 * (6 - k), 'minutes');
       return {
         moment: bedtime, elapsed: targetTime.diff(bedtime, 'hours', true)
-      }
+      };
     });
   }
 }
