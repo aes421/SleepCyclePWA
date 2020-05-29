@@ -20,7 +20,8 @@
         <section id="suggestions">
             <ng-container *ngFor="let suggestion of suggestions">
                 <div class="suggestion">
-                    {{ suggestion.moment.format('hh:mm a') }}
+                    <h2>{{ suggestion.moment.format('hh:mm a') }}</h2>
+                    {{ suggestion.elapsed }} hours
                 </div>
             </ng-container>
         </section>
