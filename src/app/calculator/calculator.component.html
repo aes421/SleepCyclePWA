@@ -15,12 +15,12 @@
         <button (click)="calculate()">CALCULATE</button>
     </form>
 
-    <ng-container *ngIf="suggestedTimes.length > 0">
+    <ng-container *ngIf="suggestions.length > 0">
         <h1> I should go to sleep at: </h1>
         <section id="suggestions">
-            <ng-container *ngFor="let time of suggestedTimes">
+            <ng-container *ngFor="let suggestion of suggestions">
                 <div class="suggestion">
-                    {{ time.format('hh:mm a') }}
+                    {{ suggestion.moment.format('hh:mm a') }}
                 </div>
             </ng-container>
         </section>
