@@ -16,29 +16,35 @@ describe('SleepCycleCalculatorService', () => {
   });
 
   it('should calculate bedtime for times on the hour', () => {
-    expect(JSON.stringify(
-      service.calculateBedtime(moment('06:00 AM', 'hh:mm a'))))
-      .toBe(JSON.stringify([
-        moment('09:00 PM', 'hh:mm a').subtract(1, 'day'),
-        moment('10:30 PM', 'hh:mm a').subtract(1, 'day'),
-        moment('12:00 AM', 'hh:mm a')]));
+    const result = service.calculateBedtime(moment('06:00 AM', 'hh:mm a'));
+
+    expect(result[0].moment.format()).toEqual(moment('09:00 PM', 'hh:mm a').subtract(1, 'day').format());
+    expect(result[1].moment.format()).toEqual(moment('10:30 PM', 'hh:mm a').subtract(1, 'day').format());
+    expect(result[2].moment.format()).toEqual(moment('12:00 AM', 'hh:mm a').format());
   });
 
   it('should calculate bedtime for times with minutes', () => {
-    expect(JSON.stringify(
-      service.calculateBedtime(moment('06:15 AM', 'hh:mm a'))))
-      .toBe(JSON.stringify([
-        moment('09:15 PM', 'hh:mm a').subtract(1, 'day'),
-        moment('10:45 PM', 'hh:mm a').subtract(1, 'day'),
-        moment('12:15 AM', 'hh:mm a')]));
+    const result = service.calculateBedtime(moment('06:15 AM', 'hh:mm a'));
+
+    expect(result[0].moment.format()).toEqual(moment('09:15 PM', 'hh:mm a').subtract(1, 'day').format());
+    expect(result[1].moment.format()).toEqual(moment('10:45 PM', 'hh:mm a').subtract(1, 'day').format());
+    expect(result[2].moment.format()).toEqual(moment('12:15 AM', 'hh:mm a').format());
   });
 
   it('should calculate bedtime without day change', () => {
-    expect(JSON.stringify(
-      service.calculateBedtime(moment('11:15 PM', 'hh:mm a'))))
-      .toBe(JSON.stringify([
-        moment('02:15 PM', 'hh:mm a'),
-        moment('03:45 PM', 'hh:mm a'),
-        moment('05:15 PM', 'hh:mm a')]));
+    const result = service.calculateBedtime(moment('11:15 PM', 'hh:mm a'));
+
+    expect(result[0].moment.format()).toEqual(moment('02:15 PM', 'hh:mm a').format());
+    expect(result[1].moment.format()).toEqual(moment('03:45 PM', 'hh:mm a').format());
+    expect(result[2].moment.format()).toEqual(moment('05:15 PM', 'hh:mm a').format());
   });
+
+  it('should calculate duration slept', () => {
+    const result = service.calculateBedtime(moment('11:15 PM', 'hh:mm a'));
+
+    expect(result[0].elapsed).toEqual(9);
+    expect(result[1].elapsed).toEqual(7.5);
+    expect(result[2].elapsed).toEqual(6);
+  });
+
 });

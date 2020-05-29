@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { SleepCycleCalculatorService } from '../sleep-cycle-calculator.service';
 import * as moment from 'moment';
+import { Suggestion } from 'src/models/suggestion';
 
 @Component({
   selector: 'app-calculator',
@@ -20,22 +21,20 @@ export class CalculatorComponent implements OnInit {
     period: new FormControl(this.periods[0])
   });
 
-  suggestedTimes: moment.Moment[] = [];
+  suggestions: Suggestion[] = [];
 
   constructor(private calculator: SleepCycleCalculatorService) { }
 
   ngOnInit() {
-    this.form.valueChanges.subscribe(_ => this.suggestedTimes = []);
+    this.form.valueChanges.subscribe(_ => this.suggestions = []);
   }
 
   calculate() {
-    this.suggestedTimes = this.calculator.calculateBedtime(moment(
+    this.suggestions = this.calculator.calculateBedtime(moment(
       `${this.form.get('hour').value}-
       ${this.form.get('minute').value}-
       ${this.form.get('period').value}`, 'hh:mm a'
     ));
-
-    console.log(this.suggestedTimes);
   }
 
 }
