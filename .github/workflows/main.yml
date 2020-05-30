@@ -31,12 +31,9 @@ jobs:
     - name: Install Dependencies
       if: steps.cache.outputs.cache-hit != 'true'
       run: npm install
-      
-    - name: Lint project
-      run: npm run lint
     
-    - name: Run unit tests
-      run: npm run ci-test
+    - name: Ng build
+      run: ng build --prod
      
     - name: Build angular project
       run: npm run prod-build
