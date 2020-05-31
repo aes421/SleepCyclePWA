@@ -1,8 +1,8 @@
 {
   "name": "Rested. Sleep Better, Wake up Rested.",
   "short_name": "Rested",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "theme_color": "#295B71",
+  "background_color": "#295B71",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
