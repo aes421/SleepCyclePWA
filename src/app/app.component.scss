@@ -1,3 +1,30 @@
+#container{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    #content {
+        flex: 1;
+    }
+    
+    footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        background: #31353a;
+        font-size: .75rem;
+        color: darkgrey;
+
+        #contact{
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            margin-left: .2rem;
+        }
+    }
+}
+
 nav{
     display: flex;
     flex-direction: row;
