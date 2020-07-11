@@ -1,0 +1,12 @@
+<main>
+    <ng-container *ngIf="installer.nativeInstaller; else iosInstructions">
+        {{installer.nativeInstaller.prompt()}}
+    </ng-container>
+
+    <ng-template #iosInstructions>
+        <p>On iOS click this icon: </p>
+        <img src="../../assets/apple-share-icon.PNG">
+        <br />
+        <p>Then click Add to Home</p>
+    </ng-template>
+</main>

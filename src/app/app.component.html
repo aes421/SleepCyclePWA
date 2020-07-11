@@ -8,6 +8,9 @@
         <a routerLink="/how-to">
             How to Use
         </a>
+        <a routerLink="/install" *ngIf="installer.canInstall$ | async">
+            Install
+        </a>
     </nav>
     <div id="content">
         <router-outlet></router-outlet>
