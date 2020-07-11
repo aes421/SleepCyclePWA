@@ -1,12 +1,15 @@
 <div id="container">
     <nav>
-        <a href="#" id="home">
+        <a id="home" routerLink="">
             <span id="tagline">Sleep Better, Wake Up
             </span>
             <span id="logo">Rested</span>
         </a>
-        <a routerlink="/how-to">
+        <a routerLink="/how-to">
             How to Use
+        </a>
+        <a routerLink="/install" *ngIf="installer.canInstall$ | async">
+            Install
         </a>
     </nav>
     <div id="content">
