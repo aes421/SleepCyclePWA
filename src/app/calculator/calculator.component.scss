@@ -10,6 +10,9 @@ select {
     background-color: inherit;
     color: inherit;
     font-family: inherit;
+    height: 25px;
+    width: 100px;
+    font-size: 1.2em;
     option{
         background-color: #1C3F5A;
         color: #FFFFFF;
@@ -22,7 +25,7 @@ select {
 }
 
 button{
-    background: #1BD0CB 50%;
+    background: #09a09a 50%;
     background-size: 100%;
     border: none;
     border-radius: 5px;
@@ -31,8 +34,9 @@ button{
     margin: 8px;
     height: 36px;
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.2);
-    font-weight: 800;
-    color: inherit;
+    font-weight: 600;
+    font-size: 1.2em;
+    color: white;
 }
 
 button:hover{
