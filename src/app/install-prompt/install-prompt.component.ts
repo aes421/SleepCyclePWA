@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './install-prompt.component.html',
   styleUrls: ['./install-prompt.component.scss']
 })
+
 export class InstallPromptComponent implements OnInit {
 
   constructor(public installer: InstallPromptService, private router: Router) { }
