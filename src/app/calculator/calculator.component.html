@@ -1,15 +1,15 @@
 <main>
     <h1> I want to wake up at:</h1>
     <form [formGroup]="form">
-        <select id="hours" formControlName="hour">
+        <select id="hours" formControlName="hour" aria-label="hours">
             <option class="defaultSelection">hour</option>
             <option *ngFor="let h of hours" [value]="h">{{h}}</option>
         </select>
-        <select id="minutes" formControlName="minute">
+        <select id="minutes" formControlName="minute" aria-label="minutes">
             <option class="defaultSelection">minute</option>
             <option *ngFor="let m of minutes" [value]="m">{{m}}</option>
         </select>
-        <select id="period" formControlName="period">
+        <select id="period" formControlName="period" aria-label="AM or PM">
             <option *ngFor="let p of periods" [value]="p">{{p}}</option>
         </select>
         <button (click)="calculate()">CALCULATE</button>
