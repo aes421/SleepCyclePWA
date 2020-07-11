@@ -19,5 +19,10 @@
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
+  },
+  "paths": {
+    "moment": [
+      "../node_modules/moment/min/moment.min.js"
+    ]
   }
 }
